@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import  { Suspense } from "react";
+import "./App.css";
+import ScrollToTop from "./utils/ScrollToTop";
+import { MainPage } from "./pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </div>
   );
 }
