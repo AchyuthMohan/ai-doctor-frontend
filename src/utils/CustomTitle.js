@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 const CustomTitle = ({title}) => {
   return (
     <Helmet>
-        <title>Excel | {title}</title>
+        <title>Excel 2022 | {title}</title>
     </Helmet>
   )
 }
