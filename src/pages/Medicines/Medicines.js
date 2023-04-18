@@ -1,8 +1,11 @@
 import React from 'react'
-import 'Medicines.css'
+import './Medicines.css'
+import MainLayout from '../../components/MainLayout/MainLayout'
 const Medicines = () => {
   return (
-    <div>Medicines</div>
+    <MainLayout>
+        <h1>Medicines</h1>
+    </MainLayout>
   )
 }
 

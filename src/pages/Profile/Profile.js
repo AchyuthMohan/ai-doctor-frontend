@@ -1,8 +1,11 @@
 import React from 'react'
 import './Profile.css'
+import MainLayout from '../../components/MainLayout/MainLayout'
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <MainLayout>
+        <h1>Proile</h1>
+    </MainLayout>
   )
 }
 
