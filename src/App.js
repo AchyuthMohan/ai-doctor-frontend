@@ -1,7 +1,7 @@
 import  { Suspense } from "react";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";
-import { MainPage } from "./pages";
+import { MainPage,DoctorsList,Medicines,Profile } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="/doctors" element={<DoctorsList />} />
+            <Route path="/medicines" element={<Medicines />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

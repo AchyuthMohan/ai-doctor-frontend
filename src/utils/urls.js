@@ -1,0 +1,1 @@
+export const predictorUrl="https://api.infermedica.com/v3"

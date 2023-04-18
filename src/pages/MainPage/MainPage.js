@@ -1,10 +1,10 @@
 import React from 'react'
 import './MainPage.css'
-import Chatbot from '../../components/Chatbot/DiseasePredictionBot'
+import Predictor from '../../components/Chatbot/Predictor'
 const MainPage = () => {
   return (
     <div>
-      <Chatbot/>
+      <Predictor/>
     </div>
   )
 }
