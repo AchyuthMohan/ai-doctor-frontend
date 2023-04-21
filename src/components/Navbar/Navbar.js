@@ -37,8 +37,8 @@ function Navbar() {
           <Link to="/predictor" className="nav_item">
             Predictor
           </Link>
-          <Link to="/" className="nav_item_mob" spy={true} smooth={true}>
-            Logout
+          <Link to="/login" className="nav_item_mob" spy={true} smooth={true}>
+            Login
           </Link>
           <Link to="/profile" className="nav_item_mob" spy={true} smooth={true}>
             Profile
@@ -111,8 +111,8 @@ function Navbar() {
                 Predictor
               </Link>
 
-              <Link to="/" className="nav_item_mob" spy={true} smooth={true}>
-                Logout
+              <Link to="/login" className="nav_item_mob" spy={true} smooth={true}>
+                Login
               </Link>
               <Link
                 to="/profile"

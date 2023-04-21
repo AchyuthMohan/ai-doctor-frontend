@@ -1,0 +1,59 @@
+.login__main_container {
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url("../../assets/svg/istockphoto-1197585271-612x612\ 1.svg");
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    
+  }
+  .sign__up_red{
+      color: #7b2869;
+      text-decoration: underline;
+      cursor: pointer;
+  }
+  .login__main_container >p{
+      color: #ffff;
+  }
+  .login__main_container > h1{
+      color: #ffff;
+      font-size: 3rem;
+      font-family: 'Ubuntu Mono';
+  }
+  .login__form {
+    background: hsla(0, 0%, 100%, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 20px;
+  }
+  .login__form > input {
+    width: 16rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #7b2869;
+    height: 3rem;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+  }
+  .login__form > button {
+    width: 12rem;
+    cursor: pointer;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    border: none;
+    color: #7b2869;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    height: 3rem;
+  }
+  

@@ -1,15 +1,14 @@
 import React from "react";
-import './DoctorList.css'
-const DoctorCard = () => {
+import "./DoctorList.css";
+const DoctorCard = ({ key, name, image, spec }) => {
   return (
     <div className="doctor_card">
       <img
-        src="https://avatars.githubusercontent.com/u/110590339?s=200&v=4"
+        src={image}
         alt=" "
       />
-      <p className="doc__name_card">Doctor Name</p>
-      <p className="doc__quali_card">Qualification</p>
-      
+      <p className="doc__name_card">{name}</p>
+      <p className="doc__quali_card">{spec}</p>
     </div>
   );
 };
