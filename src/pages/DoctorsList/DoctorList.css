@@ -1,0 +1,56 @@
+.docs__list_main_contain {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem;
+
+}
+.docs__list_main_contain>h1{
+    color: #9D3C72;
+    font-family: 'Ubuntu';
+    font-weight: 600;
+    font-size: 2rem;
+}
+.doctors__cards_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.doc__name_card{
+    font-size: 1rem;
+    color: #ffff;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+
+}
+.doc__quali_card{
+    font-size: 0.8rem;
+    color: #ffff;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+}
+
+.doctor_card {
+  display: flex;
+  width: 15rem;
+  height: 16rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: rgba(157, 60, 114, 0.8);
+  backdrop-filter: blur(25px);
+}
+
+.doctor_card >img{
+    width: 100%;
+    height: 10rem;
+    border-radius: 20px;
+    top: 0;
+}
