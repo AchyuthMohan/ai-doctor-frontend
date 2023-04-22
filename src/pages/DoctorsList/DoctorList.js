@@ -6,7 +6,9 @@ import axios from "axios";
 import { baseUrl } from "../../utils/urls";
 import { useEffect } from "react";
 import { useState } from "react";
+import DoctorProfile from "./DoctorProfile";
 const DoctorList = () => {
+  const [currentDoc, setCurrentDoc] = useState({});
   const [doctors, setDoctors] = useState([]);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
@@ -26,16 +28,26 @@ const DoctorList = () => {
     return (
       <MainLayout>
         <div className="docs__list_main_contain">
+          {Object.keys(currentDoc).length !== 0 ? (
+            <DoctorProfile doctor={currentDoc} />
+          ) : null}
           <h1>Doctors</h1>
           <div className="doctors__cards_container">
             {doctors?.map((doctor, index) => {
               return (
-                <DoctorCard
-                  key={index}
-                  name={doctor.name}
-                  image={doctor.image}
-                  spec={doctor.spec}
-                />
+                <div
+                  onClick={() => {
+                    console.log("Clicked ");
+                    setCurrentDoc(doctor);
+                  }}
+                >
+                  <DoctorCard
+                    key={index}
+                    name={doctor.name}
+                    image={doctor.image}
+                    spec={doctor.special}
+                  />
+                </div>
               );
             })}
           </div>
