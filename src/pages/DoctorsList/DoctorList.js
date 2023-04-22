@@ -36,6 +36,7 @@ const DoctorList = () => {
             {doctors?.map((doctor, index) => {
               return (
                 <div
+                  style={{ cursor: "pointer" }}
                   onClick={() => {
                     console.log("Clicked ");
                     setCurrentDoc(doctor);

@@ -5,7 +5,7 @@ const DoctorProfile = ({doctor}) => {
   return (
     <div className="doc__profile__main">
         <div className="image__section_profile">
-          <img src="http://localhost:8000/media/doctor_images/depositphotos_391545206-stock-photo-happy-male-medical-doctor-portrait_55EDMJf.jpg" alt=" " />
+          <img src={doctor.image} alt=" " />
           <p>{doctor.name}</p>
         </div>
         <div className="personal__doc_profile_info">
