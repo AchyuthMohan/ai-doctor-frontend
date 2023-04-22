@@ -6,6 +6,7 @@ import axios from "axios";
 import { baseUrl } from "../../utils/urls";
 import { useEffect } from "react";
 import { useState } from "react";
+import Loader from "../../components/Loader/Loader";
 import DoctorProfile from "./DoctorProfile";
 const DoctorList = () => {
   const [currentDoc, setCurrentDoc] = useState({});
@@ -23,7 +24,7 @@ const DoctorList = () => {
     );
   }, []);
   if (isLoading) {
-    return <h1>loading...</h1>;
+    return <Loader />;
   } else {
     return (
       <MainLayout>
@@ -38,7 +39,6 @@ const DoctorList = () => {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    console.log("Clicked ");
                     setCurrentDoc(doctor);
                   }}
                 >
