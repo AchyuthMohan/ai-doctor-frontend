@@ -5,6 +5,7 @@ const Medicines = () => {
   return (
     <MainLayout>
         <h1>Medicines</h1>
+        
     </MainLayout>
   )
 }
