@@ -3,10 +3,12 @@ import { Drawer } from "@mui/material";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+// import { useContext } from "react";
+// import AuthContext from "../../contexts/AuthContext";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-
+  // const { user, loading } = useContext(AuthContext);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -37,6 +39,20 @@ function Navbar() {
           <Link to="/predictor" className="nav_item">
             Predictor
           </Link>
+          {/* {user ? (
+            <Link
+              to="/profile"
+              className="nav_item_mob"
+              spy={true}
+              smooth={true}
+            >
+              {user.username}
+            </Link>
+          ) : (
+            <Link to="/login" className="nav_item_mob" spy={true} smooth={true}>
+              Login
+            </Link>
+          )} */}
           <Link to="/login" className="nav_item_mob" spy={true} smooth={true}>
             Login
           </Link>
@@ -111,7 +127,12 @@ function Navbar() {
                 Predictor
               </Link>
 
-              <Link to="/login" className="nav_item_mob" spy={true} smooth={true}>
+              <Link
+                to="/login"
+                className="nav_item_mob"
+                spy={true}
+                smooth={true}
+              >
                 Login
               </Link>
               <Link

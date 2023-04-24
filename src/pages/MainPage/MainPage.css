@@ -1,0 +1,10 @@
+.landing__main_container {
+  width: 100vw;
+  height: 88vh;
+  background: rgb(206, 106, 184);
+  background: linear-gradient(
+    180deg,
+    rgba(206, 106, 184, 1) 0%,
+    rgba(230, 191, 212, 1) 75%
+  );
+}
