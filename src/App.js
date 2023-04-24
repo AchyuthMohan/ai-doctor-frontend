@@ -4,10 +4,12 @@ import ScrollToTop from "./utils/ScrollToTop";
 import { MainPage,DoctorsList,Medicines,Profile,Predictor, Login, Signup } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
+import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Navbar/>
         <Suspense fallback={<Loader/>}>
           <ScrollToTop />
           <Routes>

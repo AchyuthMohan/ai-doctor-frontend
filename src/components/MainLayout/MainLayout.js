@@ -4,7 +4,7 @@ import './MainLayout.css'
 const MainLayout = ({children}) => {
   return (
     <div  className='mainlayout'>
-      <Navbar/>
+      {/* <Navbar/> */}
       {children}
     </div>
   )

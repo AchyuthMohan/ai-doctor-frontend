@@ -8,9 +8,14 @@
 .profile__card{
     height: 100%;
     width: fit-content;
+    gap: 1rem;
     display: flex;
     flex-direction: column;
     background: rgba(242, 220, 225, 0.65);
-    padding: 3rem;
+    padding: 2rem;
     align-items: center;
+}
+.profile__card >img{
+    border-radius: 50%;
+
 }
