@@ -16,7 +16,7 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const Predictor = () => {
-  const [conditions, setConditions] = useState([]);
+  // const [conditions, setConditions] = useState([]);
   const[selectedSymptoms,setSelectedSymtoms]=useState([])
   const[disease,setDisease]=useState('')
   const requestBody = {
@@ -40,7 +40,7 @@ const Predictor = () => {
         console.log(response.data.conditions);
         console.log("most prolly: ", response.data.conditions[0].name);
         setDisease(response.data.conditions[0].name)
-        setConditions(response.data.conditions);
+        // setConditions(response.data.conditions);
       });
   };
   return (
