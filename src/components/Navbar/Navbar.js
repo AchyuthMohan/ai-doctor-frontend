@@ -3,18 +3,24 @@ import { Drawer } from "@mui/material";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-// import { useContext } from "react";
-// import AuthContext from "../../contexts/AuthContext";
+import axiosInstance from "../../auth/authHandler";
+
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  // const { user, loading } = useContext(AuthContext);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+  const Logout = () => {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+    axiosInstance.defaults.headers["Authorization"] = null;
+    // console.log("user logged out");
+    window.location.reload();
   };
 
   return (
@@ -39,23 +45,23 @@ function Navbar() {
           <Link to="/predictor" className="nav_item">
             Predictor
           </Link>
-          {/* {user ? (
+          {localStorage.getItem("refresh_token") ? (
             <Link
-              to="/profile"
               className="nav_item_mob"
               spy={true}
               smooth={true}
+              onClick={() => {
+                Logout();
+              }}
             >
-              {user.username}
+              Logout
             </Link>
           ) : (
             <Link to="/login" className="nav_item_mob" spy={true} smooth={true}>
               Login
             </Link>
-          )} */}
-          <Link to="/login" className="nav_item_mob" spy={true} smooth={true}>
-            Login
-          </Link>
+          )}
+
           <Link to="/profile" className="nav_item_mob" spy={true} smooth={true}>
             Profile
           </Link>
@@ -135,15 +141,17 @@ function Navbar() {
               >
                 Login
               </Link>
-              <Link
-                to="/profile"
-                className="nav_item_mob"
-                spy={true}
-                smooth={true}
-                onClick={handleDrawerClose}
-              >
-                Profile
-              </Link>
+              {localStorage.getItem("refresh_token") ? (
+                <Link
+                  to="/profile"
+                  className="nav_item_mob"
+                  spy={true}
+                  smooth={true}
+                  onClick={handleDrawerClose}
+                >
+                  Profile
+                </Link>
+              ) : null}
             </div>
           </div>
         </div>

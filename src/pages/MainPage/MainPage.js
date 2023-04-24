@@ -35,6 +35,10 @@ const MainPage = () => {
           width={mascotSize}
           style={{ margin: 0 }}
         />
+        <div className="landing__desc_part">
+          <h1>AI Doctor</h1>
+          <p>The complete solution for your medical services..</p>
+        </div>
       </div>
     </MainLayout>
   );
