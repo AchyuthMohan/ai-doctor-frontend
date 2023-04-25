@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: cursive;
+    box-sizing: border-box;
+}
+.flex-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap:2rem;
+}
+.flex-box{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height:220px;
+    background: linear-gradient(purple,red);
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
+}
+.name
+{
+    font-size: 15px;
+
+}
+.flex-box img{
+    width: 200px;
+    height:160px;
+    border-radius: 20px;
+
+}
