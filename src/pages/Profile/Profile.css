@@ -19,3 +19,42 @@
     border-radius: 50%;
 
 }
+.booking__section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 105px;
+    padding-top:70px;
+    gap:2rem;
+    justify-content: space-between;
+}
+.flex-box{
+    width: 900px;
+    height: 950px;
+    background: white;
+    font-size: 25px;
+    text-align: justify;
+    border-radius: 19px;
+    margin: 10px;
+    border-style: solid;
+    border: 1px solid #9D3C72;
+   
+}
+
+.head{
+    background-color: rgba(242, 220, 225, 0.65);
+    border-top-right-radius: 19px;
+    border-top-left-radius: 19px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    color: #7B2869;
+    font-family: 'Ubuntu';
+    font-size: 19px;
+    padding-top: 15px;
+}
+
+.content{
+    padding-left: 20px;
+    padding-top: 30px;
+}
