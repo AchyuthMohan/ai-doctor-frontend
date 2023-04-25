@@ -13,13 +13,18 @@ const Profile = () => {
           </div>
           <div className="booking__section">
             <div className="flex-box">
+              <div className="head">
               APPOINTMENTS
-              <div>
-                DATE TIME
+              </div>
+             
+              <div className="content">                
+                DATE &nbsp;&nbsp;&nbsp; TIME
               </div>
             </div>
             <div className="flex-box">
+              <div className="head">
               PURCHASE HISTORY
+              </div>
             </div>
           </div>
         </div>
