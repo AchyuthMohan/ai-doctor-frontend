@@ -343,4 +343,203 @@ export const symptoms = [
     name: "Avoiding talking to authority figures",
     choice_id: "present",
   },
+  { id: 's_1023', name: 'Babinski sign', choice_id: 'present' },
+  { id: 's_1190', name: 'Back pain', choice_id: 'present' },
+  {
+    id: 's_159',
+    name: 'Back pain, exacerbated by physical exertion',
+    choice_id: 'present'
+  },
+  {
+    id: 's_1206',
+    name: 'Back pain, improves with rest',
+    choice_id: 'present'
+  },
+  {
+    id: 's_1205',
+    name: 'Back pain, lasting several hours',
+    choice_id: 'present'
+  },
+  { id: 's_53', name: 'Back pain, lumbar', choice_id: 'present' },
+  {
+    id: 's_38',
+    name: 'Back pain, lumbar, radiates to back of the thigh',
+    choice_id: 'present'
+  },
+  {
+    id: 's_663',
+    name: 'Back pain, lumbar, radiating to the groin',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2314',
+    name: 'Back pain, lumbar, unknown radiating direction',
+    choice_id: 'present'
+  },
+  { id: 's_2284', name: 'Back pain, nocturnal', choice_id: 'present' },
+  { id: 's_1189', name: 'Back pain, recurrent', choice_id: 'present' },
+  { id: 's_1192', name: 'Back pain, severe', choice_id: 'present' },
+  { id: 's_1198', name: 'Back pain, sudden', choice_id: 'present' },
+  { id: 's_1772', name: 'Back pain, thoracic', choice_id: 'present' },
+  {
+    id: 's_2085',
+    name: 'Back pain, worsens on palpation',
+    choice_id: 'present'
+  },
+  { id: 's_2048', name: 'Bedwetting', choice_id: 'present' },
+  { id: 's_561', name: 'Belching', choice_id: 'present' },
+  {
+    id: 's_1073',
+    name: 'Bilateral absence of Achilles tendon reflex',
+    choice_id: 'present'
+  },
+  { id: 's_698', name: 'Bilateral enophthalmos', choice_id: 'present' },
+  {
+    id: 's_1291',
+    name: 'Bilateral muscle paralysis',
+    choice_id: 'present'
+  },
+  { id: 's_1257', name: "Bing's sign", choice_id: 'present' },
+  { id: 's_137', name: 'Binge eating', choice_id: 'present' },
+  {
+    id: 's_568',
+    name: 'Binge eating, followed by self-disgust',
+    choice_id: 'present'
+  },
+  { id: 's_71', name: 'Black coloured stool', choice_id: 'present' },
+  {
+    id: 's_2523',
+    name: 'Black stool, related to diet or medicine intake',
+    choice_id: 'present'
+  },
+  {
+    id: 's_1119',
+    name: 'Bladder sphincter dysfunction',
+    choice_id: 'present'
+  },
+  {
+    id: 's_152',
+    name: 'Bleeding after intercourse',
+    choice_id: 'present'
+  },
+  { id: 's_115', name: 'Bleeding from anus', choice_id: 'present' },
+  {
+    id: 's_2277',
+    name: 'Bleeding from anus, heavy',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2276',
+    name: 'Bleeding from anus, light',
+    choice_id: 'present'
+  },
+  { id: 's_111', name: 'Bleeding gums', choice_id: 'present' },
+  { id: 's_1386', name: 'Bleeding into muscles', choice_id: 'present' },
+  { id: 's_192', name: 'Blepharoptosis', choice_id: 'present' },
+  { id: 's_2508', name: 'Blepharoptosis, acute', choice_id: 'present' },
+  {
+    id: 's_2511',
+    name: 'Blepharoptosis, chronic',
+    choice_id: 'present'
+  },
+  { id: 's_1807', name: 'Blisters', choice_id: 'present' },
+  { id: 's_1803', name: 'Blisters, bulla', choice_id: 'present' },
+  { id: 's_1804', name: 'Blisters, vesicle', choice_id: 'present' },
+  { id: 's_309', name: 'Bloating', choice_id: 'present' },
+  {
+    id: 's_2012',
+    name: 'Blood glucose level, high',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2011',
+    name: 'Blood glucose level, low',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2013',
+    name: 'Blood glucose level, normal',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2014',
+    name: 'Blood glucose level, not measured',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2482',
+    name: 'Blood glucose level, very high',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2487',
+    name: 'Blood glucose level, very low',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2388',
+    name: 'Blood oxygen saturation, between 80% and 89%',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2387',
+    name: 'Blood oxygen saturation, between 90% and 94%',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2389',
+    name: 'Blood oxygen saturation, lower than 80%',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2376',
+    name: 'Blood oxygen saturation, normal',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2375',
+    name: 'Blood oxygen saturation, not measured',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2390',
+    name: 'Blood oxygen saturation, sudden worsening',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2408',
+    name: 'Blood pressure, between 140 and 179 mmHg',
+    choice_id: 'present'
+  },
+  {
+    id: 's_543',
+    name: 'Blood pressure, elevated',
+    choice_id: 'present'
+  },
+  {
+    id: 's_1933',
+    name: 'Blood pressure, more than 180 mmHg',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2272',
+    name: 'Blood pressure, normal or prehypertension',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2273',
+    name: 'Blood pressure, not measured',
+    choice_id: 'present'
+  },
+  { id: 's_1835', name: 'Body aches', choice_id: 'present' },
+  {
+    id: 's_2180',
+    name: 'Bone deformation, non-traumatic',
+    choice_id: 'present'
+  },
+  {
+    id: 's_2181',
+    name: 'Bone deformation, post-traumatic',
+    choice_id: 'present'
+  },
 ];

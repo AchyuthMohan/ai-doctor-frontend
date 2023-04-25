@@ -11,13 +11,14 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
-
+import TreatmentPredic from "./TreatmentPredic";
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const Predictor = () => {
-  // const [conditions, setConditions] = useState([]);
+  const [conditionId, setConditionId] = useState('');
   const[selectedSymptoms,setSelectedSymtoms]=useState([])
+  const[showTreat,setShowTreat]=useState(false);
   const[disease,setDisease]=useState('')
   const requestBody = {
     sex: "male",
@@ -40,7 +41,8 @@ const Predictor = () => {
         console.log(response.data.conditions);
         console.log("most prolly: ", response.data.conditions[0].name);
         setDisease(response.data.conditions[0].name)
-        // setConditions(response.data.conditions);
+        setConditionId(response.data.conditions[0].id)
+        setShowTreat(true);
       });
   };
   return (
@@ -74,6 +76,7 @@ const Predictor = () => {
         <button onClick={handleSubmit}>Predict now: </button>
         <p>The disease is: {disease}</p>
       </div>
+       {showTreat?<TreatmentPredic conditionId={conditionId}/>:null}
     </MainLayout>
   );
 };

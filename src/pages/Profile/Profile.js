@@ -11,7 +11,9 @@ const Profile = () => {
             <p>ID</p>
             <p>Age</p>
           </div>
-          <div className="booking__section"></div>
+          <div className="booking__section">
+            
+          </div>
         </div>
     </MainLayout>
   )
