@@ -11,10 +11,19 @@ const Profile = () => {
             <p>ID</p>
             <p>Age</p>
           </div>
-          <div className="booking__section"></div>
+          <div className="booking__section">
+            <div className="flex-box">
+              APPOINTMENTS
+              <div>
+                DATE TIME
+              </div>
+            </div>
+            <div className="flex-box">
+              PURCHASE HISTORY
+            </div>
+          </div>
         </div>
     </MainLayout>
   )
 }
-
 export default Profile
