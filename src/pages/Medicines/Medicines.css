@@ -12,16 +12,27 @@
     flex-wrap: wrap;
     justify-content:center;
     gap:2rem;
-    background-image:;
 }
 .flex-box{
     width: 200px;
-    height:200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height:220px;
     background: linear-gradient(purple,red);
     color:white;
     font-size: 25px;
     text-align: center;
-    line-height: 200px;
     border-radius: 20px;
-    margin: 25px;
+}
+.name
+{
+    font-size: 15px;
+
+}
+.flex-box img{
+    width: 200px;
+    height:160px;
+    border-radius: 20px;
+
 }
