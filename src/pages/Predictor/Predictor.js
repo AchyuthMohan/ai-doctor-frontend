@@ -16,17 +16,17 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const Predictor = () => {
-  const [conditionId, setConditionId] = useState('');
-  const[selectedSymptoms,setSelectedSymtoms]=useState([])
-  const[showTreat,setShowTreat]=useState(false);
-  const[disease,setDisease]=useState('')
+  const [conditionId, setConditionId] = useState("");
+  const [selectedSymptoms, setSelectedSymtoms] = useState([]);
+  const [showTreat, setShowTreat] = useState(false);
+  const [disease, setDisease] = useState("");
   const requestBody = {
     sex: "male",
     age: {
       value: 20,
     },
-    
-    evidence:selectedSymptoms,
+
+    evidence: selectedSymptoms,
   };
   const handleSubmit = () => {
     axios
@@ -40,20 +40,22 @@ const Predictor = () => {
       .then((response) => {
         console.log(response.data.conditions);
         console.log("most prolly: ", response.data.conditions[0].name);
-        setDisease(response.data.conditions[0].name)
-        setConditionId(response.data.conditions[0].id)
+        setDisease(response.data.conditions[0].name);
+        setConditionId(response.data.conditions[0].id);
         setShowTreat(true);
       });
   };
   return (
-    <MainLayout>
+    <>
       <div>
         <Autocomplete
           multiple
           id="checkboxes-tags-demo"
           options={symptoms}
           onChange={(event, value) => {
-            setSelectedSymtoms(value.map(({ id,choice_id  }) => ({ id,choice_id })));
+            setSelectedSymtoms(
+              value.map(({ id, choice_id }) => ({ id, choice_id }))
+            );
           }}
           disableCloseOnSelect
           getOptionLabel={(option) => option.name}
@@ -76,8 +78,8 @@ const Predictor = () => {
         <button onClick={handleSubmit}>Predict now: </button>
         <p>The disease is: {disease}</p>
       </div>
-       {showTreat?<TreatmentPredic conditionId={conditionId}/>:null}
-    </MainLayout>
+      {showTreat ? <TreatmentPredic conditionId={conditionId} /> : null}
+    </>
   );
 };
 

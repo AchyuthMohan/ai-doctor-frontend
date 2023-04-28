@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { baseUrl } from "../../utils/urls";
 import "./Signup.css";
-import MainLayout from "../../components/MainLayout/MainLayout";
 import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -30,50 +29,48 @@ const Signup = () => {
       );
   };
   return (
-    <MainLayout>
-      <div className="login__main_container">
-        <h1>Sign Up</h1>
+    <div className="login__main_container">
+      <h1>Sign Up</h1>
 
-        <form onSubmit={handleSubmit} className="login__form">
-          <input
-            type="text"
-            placeholder="username"
-            value={username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-          <button type="submit">Sign up</button>
-        </form>
-        <p>
-          Already have an account?
-          <span
-            className="sign__up_red"
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Login
-          </span>
-        </p>
-      </div>
-    </MainLayout>
+      <form onSubmit={handleSubmit} className="login__form">
+        <input
+          type="text"
+          placeholder="username"
+          value={username}
+          onChange={(e) => {
+            setUsername(e.target.value);
+          }}
+        />
+        <input
+          type="text"
+          placeholder="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <button type="submit">Sign up</button>
+      </form>
+      <p>
+        Already have an account?
+        <span
+          className="sign__up_red"
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Login
+        </span>
+      </p>
+    </div>
   );
 };
 

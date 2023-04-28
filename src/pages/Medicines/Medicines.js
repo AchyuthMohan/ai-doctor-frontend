@@ -27,7 +27,7 @@ const Medicines = () => {
   } else {
     return (
       <div className="medicines__page_hol">
-        <MedicineDetDialog open={open} handleClose={handleClose} />
+        <MedicineDetDialog PaperProps={{ style: { overflowY: 'hidden', WebkitOverflowScrolling: 'touch' } }}  open={open} handleClose={handleClose} />
         <h1>Medicines</h1>
         <div class="meds__container">
           {medicines?.map((medicine) => {

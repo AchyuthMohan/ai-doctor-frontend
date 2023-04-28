@@ -1,5 +1,18 @@
 .med_dialog__main{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2rem;
     
+    
+}
+.med_dialog__main::-webkit-scrollbar{
+    display: none;
+}
+.med_dialog_prof{
+    display: flex;
+    flex-direction: column;
+
 }

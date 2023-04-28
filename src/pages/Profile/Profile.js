@@ -1,9 +1,7 @@
 import React from 'react'
 import './Profile.css'
-import MainLayout from '../../components/MainLayout/MainLayout'
 const Profile = () => {
   return (
-    <MainLayout>
         <div className="profile__main_pg">
           <div className="profile__card">
             <img src="https://avatars.githubusercontent.com/u/110590339?s=200&v=4" alt="" />
@@ -28,7 +26,6 @@ const Profile = () => {
             </div>
           </div>
         </div>
-    </MainLayout>
   )
 }
 export default Profile
