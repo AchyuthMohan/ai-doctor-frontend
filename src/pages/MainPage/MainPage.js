@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./MainPage.css";
-import MainLayout from "../../components/MainLayout/MainLayout";
 import mascot from "../../assets/lottie/mascot.json";
 import Lottie from "react-lottie";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
@@ -27,7 +26,6 @@ const MainPage = () => {
     }
   }, [size]);
   return (
-    <MainLayout>
       <div className="landing__main_container">
         <Lottie
           options={defaultOptions}
@@ -40,7 +38,6 @@ const MainPage = () => {
           <p>The complete solution for your medical services..</p>
         </div>
       </div>
-    </MainLayout>
   );
 };
 

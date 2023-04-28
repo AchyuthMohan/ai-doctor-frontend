@@ -1,5 +1,4 @@
 import React from "react";
-import MainLayout from "../../components/MainLayout/MainLayout";
 import "./DoctorList.css";
 import DoctorCard from "./DoctorCard";
 import axios from "axios";
@@ -27,7 +26,6 @@ const DoctorList = () => {
     return <Loader />;
   } else {
     return (
-      <MainLayout>
         <div className="docs__list_main_contain">
           {Object.keys(currentDoc).length !== 0 ? (
             <DoctorProfile doctor={currentDoc} />
@@ -53,7 +51,6 @@ const DoctorList = () => {
             })}
           </div>
         </div>
-      </MainLayout>
     );
   }
 };
