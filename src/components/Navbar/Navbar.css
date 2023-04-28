@@ -16,6 +16,7 @@
   background: rgb(123, 40, 105);
   background: linear-gradient(180deg, rgba(123, 40, 105, 1) 81%);
   border-radius: 50px;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px rgba(123, 40, 105, 1);
 }
 .nav__main_container > img {
   border-radius: 50%;

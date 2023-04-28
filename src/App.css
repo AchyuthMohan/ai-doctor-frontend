@@ -7,3 +7,9 @@
     rgba(230, 191, 212, 1) -1%
   );
 }
+.btm__vector_c {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
