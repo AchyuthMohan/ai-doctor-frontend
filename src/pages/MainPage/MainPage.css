@@ -1,6 +1,7 @@
 .landing__main_container {
   width: 100vw;
   display: flex;
+  margin-top: -2rem;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 1rem;

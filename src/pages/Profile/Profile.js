@@ -12,11 +12,8 @@ const Profile = () => {
             <p>Age</p>
           </div>
           <div className="booking__section">
-<<<<<<< HEAD
-            
-=======
-            <div className="flex-box">
-              <div className="head">
+            <div className="profile__activ_box">
+              <div className="profile__head">
               APPOINTMENTS
               </div>
              
@@ -24,12 +21,11 @@ const Profile = () => {
                 DATE &nbsp;&nbsp;&nbsp; TIME
               </div>
             </div>
-            <div className="flex-box">
-              <div className="head">
+            <div className="profile__activ_box">
+              <div className="profile__head">
               PURCHASE HISTORY
               </div>
             </div>
->>>>>>> bbb8f268c6f6bbb9b206adac5fa6a513e0b71916
           </div>
         </div>
     </MainLayout>
