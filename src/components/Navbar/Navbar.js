@@ -21,7 +21,7 @@ const Navbar = () => {
           <GiMedicines size={30} />
           Medicines
         </Link>
-        <Link to="/predict">
+        <Link to="/predictor">
           <GiBrain size={30} />
           Predictor
         </Link>

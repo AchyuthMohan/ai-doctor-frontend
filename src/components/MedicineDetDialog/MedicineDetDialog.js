@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./MedicineDetDialog.css";
-import { Dialog, Hidden } from "@mui/material";
+import { Dialog } from "@mui/material";
 const MedicineDetDialog = ({ open, handleClose }) => {
   const [count, setCount] = useState(0);
   const incCount = () => {
