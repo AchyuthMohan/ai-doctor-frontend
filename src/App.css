@@ -1,4 +1,9 @@
-.App{
+.App {
   overflow: hidden;
   min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(206, 106, 184, 1) 0%,
+    rgba(230, 191, 212, 1) -1%
+  );
 }
