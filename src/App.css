@@ -1,15 +1,13 @@
 .App {
   overflow: hidden;
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    rgba(206, 106, 184, 1) 0%,
-    rgba(230, 191, 212, 1) -1%
-  );
+  background:#983A71;
+  background: -webkit-linear-gradient(to left, #8f94fb, #983A71);
 }
 .btm__vector_c {
   width: 100%;
   display: flex;
+  background:none;
   justify-content: flex-end;
   flex-direction: row;
 }

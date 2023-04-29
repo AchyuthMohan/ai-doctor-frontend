@@ -2,22 +2,19 @@ import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
-import { useNavigate } from "react-router-dom";
-import Editprofileform from "../../components/EditProfileDialog/Editprofileform";
-import { Modal, Button } from "react-bootstrap";
+import EditProfileDialog from "../../components/EditProfileDialog/EditProfileDialog";
 const Profile = () => {
-  const navigate = useNavigate();
   const [curr_username, setCurr_username] = useState("");
   const [currEmail, setCurrEmail] = useState("");
   const [age, setAge] = useState();
-  const [gender, setGender] = useState();
+  const [gender, setGender] = useState("");
   const [currUserid, setcurrUserid] = useState();
   const [actualname, setActualname] = useState("");
   const [userimg, setUserimg] = useState();
-  const [show, setShow] = useState(false);
-  const [dob, setDob] = useState();
+  const [open, setOpen] = useState(false);
+  const [dob, setDob] = useState("");
   const [userImage, setUserImage] = useState();
-  const handleClose = () => setShow(false);
+  const handleClose = () => setOpen(false);
   const [userDetailId, setUserDetailId] = useState(0);
   useEffect(() => {
     axiosInstance.get(`${baseUrl}/current-user/`).then(
@@ -52,40 +49,33 @@ const Profile = () => {
   return (
     <div className="profile__main_pg">
       <div className="profile__card">
-        <img
-          src="https://avatars.githubusercontent.com/u/110590339?s=200&v=4"
-          alt=""
-        />
+        <img src={userImage} alt="" />
         <div className="profile__card_details_sect">
-          <p>Name</p>
-          <p>ID</p>
-          <p>Age</p>
+          <p>{actualname}</p>
+          <p>AD{currUserid}</p>
+          <p>Age:{age}</p>
+          <p>Gender: {gender}</p>
+          <p>username:{curr_username}</p>
+          <p>DOB:{dob}</p>
+          <p>Email:{currEmail}</p>
+
           <button
             onClick={() => {
-              setShow(true);
+              setOpen(true);
             }}
+            
           >
             Edit profile
           </button>
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Edit profile</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Editprofileform
-                userDetailId={userDetailId}
-                actualname={actualname}
-                userimg={userimg}
-                setActualname={setActualname}
-                setUserimg={setUserimg}
-              />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close Button
-              </Button>
-            </Modal.Footer>
-          </Modal>
+          <EditProfileDialog
+            open={open}
+            handleClose={handleClose}
+            userDetailId={userDetailId}
+            actualname={actualname}
+            userimg={userimg}
+            setActualname={setActualname}
+            setUserimg={setUserimg}
+          />
         </div>
       </div>
       <div className="booking__section">

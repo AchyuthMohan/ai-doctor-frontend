@@ -35,7 +35,8 @@ const DoctorList = () => {
             {doctors?.map((doctor, index) => {
               return (
                 <div
-                  style={{ cursor: "pointer" }}
+                className="doc__card"
+                  style={{ cursor: "pointer", }}
                   onClick={() => {
                     setCurrentDoc(doctor);
                   }}

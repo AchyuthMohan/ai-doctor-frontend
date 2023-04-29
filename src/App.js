@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";
-import btmMascotVector from './assets/svg/btmMascotVector.svg'
+import btmMascotVector from "./assets/svg/btmMascotVector.svg";
+import Bubbles from "./components/Bubbles/Bubbles";
 import {
   MainPage,
   DoctorsList,
@@ -19,11 +20,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        
         <Suspense fallback={<Loader />}>
           <ScrollToTop />
-          
+
           <Navbar />
+        
           <MainLayout>
             <Routes>
               <Route path="/" element={<MainPage />} />
@@ -35,10 +36,11 @@ function App() {
               <Route path="/sign-up" element={<Signup />} />
             </Routes>
           </MainLayout>
+          <div className="btm__vector_c">
+            <img src={btmMascotVector} alt="" />
+          </div>
+          <Bubbles />
         </Suspense>
-        <div className="btm__vector_c">
-        <img src={btmMascotVector} alt="" />
-        </div>
       </BrowserRouter>
     </div>
   );

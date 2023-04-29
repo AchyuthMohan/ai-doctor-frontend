@@ -1,15 +1,19 @@
 .profile__main_pg {
   width: 100vw;
+  z-index: 3;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.profile__card_details_sect > button{
+  cursor: pointer;
+}
 .profile__card {
+  z-index: 3;
   /* gap: 2rem; */
-  justify-content: flex-start;
-  gap: 10rem;
+  justify-content: space-evenly;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -23,6 +27,7 @@
 }
 .apt__booked_data {
   display: flex;
+  z-index: 3;
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
@@ -37,6 +42,21 @@
 .profile__card > img {
   border-radius: 50%;
   height: 10rem;
+  width: 10rem;
+}
+.profile__card_details_sect >p{
+  font-size: 1rem;
+  font-family: 'Ubuntu';
+  font-weight: 600;
+  color: #7b2869;
+}
+.profile__card_details_sect > button{
+  width: 10rem;
+    border-radius: 20px;
+    border: none;
+    height: 2rem;
+    color: #7B2869;
+    background: #FFBABA;
 }
 .booking__section {
   width: 100%;
