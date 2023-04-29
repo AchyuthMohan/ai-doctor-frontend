@@ -19,9 +19,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        
         <Suspense fallback={<Loader />}>
           <ScrollToTop />
+          
+          <Navbar />
           <MainLayout>
             <Routes>
               <Route path="/" element={<MainPage />} />

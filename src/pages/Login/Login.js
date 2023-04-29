@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Login.css";
 import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
-import MainLayout from "../../components/MainLayout/MainLayout";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
@@ -28,42 +27,40 @@ const Login = () => {
       );
   };
   return (
-    <MainLayout>
-      <div className="login__main_container">
-        <h1>Login</h1>
+    <div className="login__main_container">
+      <h1>Login</h1>
 
-        <form onSubmit={handleLogin} className="login__form">
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-          <button type="submit">Login</button>
-        </form>
-        <p>
-          Don't have an account?{" "}
-          <span
-            className="sign__up_red"
-            onClick={() => {
-              navigate("/sign-up");
-            }}
-          >
-            sign-up
-          </span>
-        </p>
-      </div>
-    </MainLayout>
+      <form onSubmit={handleLogin} className="login__form">
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Don't have an account?{" "}
+        <span
+          className="sign__up_red"
+          onClick={() => {
+            navigate("/sign-up");
+          }}
+        >
+          sign-up
+        </span>
+      </p>
+    </div>
   );
 };
 
