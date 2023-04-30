@@ -9,7 +9,6 @@ import {
   DoctorsList,
   Medicines,
   Profile,
-  Predictor,
   Login,
   Signup,
 } from "./pages";
@@ -31,7 +30,6 @@ function App() {
                 <Route path="/doctors" element={<DoctorsList />} />
                 <Route path="/medicines" element={<Medicines />} />
                 <Route path="/profile" element={<Profile />} />
-                <Route path="/predictor" element={<Predictor />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign-up" element={<Signup />} />
               </Routes>
