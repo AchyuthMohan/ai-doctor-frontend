@@ -21,7 +21,7 @@ const Login = () => {
           localStorage.setItem("refresh_token", res.data.refresh);
           axiosInstance.defaults.headers["Authorization"] =
             "Bearer " + localStorage.getItem("access_token");
-          if (res.status === 200) navigate("/");
+          if (res.status === 200) window.location.assign("/");
         },
         (error) => {}
       );

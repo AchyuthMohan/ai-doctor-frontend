@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 // import navIcon from "../../assets/svg/navIcon.svg";
+import ProfileIcon from "../ProfileIcon/ProfileIcon";
 import { AiOutlineHome } from "react-icons/ai";
 import { GiHospitalCross, GiMedicines, GiBrain } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
@@ -28,10 +29,7 @@ const Navbar = () => {
           Predictor
         </Link>
         {isAuthenticated ? (
-          <Link to="/profile">
-            <CgProfile size={30} />
-            {currusername}
-          </Link>
+          <ProfileIcon currusername={currusername}/>
         ) : (
           <Link to="/login">
             <CgProfile size={30} />
