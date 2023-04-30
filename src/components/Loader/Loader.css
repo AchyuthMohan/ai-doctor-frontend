@@ -20,19 +20,19 @@
   animation: speed 2s infinite ease-in-out;
 }
 .one {
-  background: #7b2869;
+  background: #ffff;
   animation-delay: 1.5s;
 }
 .two {
-  background: #983A71;
+  background: #ffff;
   animation-delay: 1s;
 }
 .three {
-  background: #9D3C72;
+  background: #ffff;
   animation-delay: 0.5s;
 }
 .four {
-  background: #C85C8E;
+  background: #ffff;
 }
 @keyframes speed {
   0% {

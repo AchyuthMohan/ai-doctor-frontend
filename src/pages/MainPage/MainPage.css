@@ -11,16 +11,19 @@
 .landing__desc_part{
   display: flex;
   flex-direction: column;
+  width: 50%;
+  font-family: 'Ubuntu';
+  z-index: 3;
 
 }
 .landing__desc_part >h1{
-  color: #9D3C72;
+  color: #FFFF;
   font-family: 'Ubuntu';
   font-size: 2rem;
   font-weight: 600;
 }
 .landing__desc_part >p{
-  color: #9D3C72;
+  color: #FFFF;
   font-family: 'Ubuntu';
   font-size: 1rem;
   font-weight: 400;

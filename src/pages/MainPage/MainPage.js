@@ -31,11 +31,11 @@ const MainPage = () => {
           options={defaultOptions}
           height={mascotSize}
           width={mascotSize}
-          style={{ margin: 0 }}
+          style={{ margin: 0,zIndex:3 }}
         />
         <div className="landing__desc_part">
           <h1>AI Doctor</h1>
-          <p>The complete solution for your medical services..</p>
+          <p>Welcome to our AI-powered symptom identification website! Our cutting-edge technology uses the latest advancements in artificial intelligence to help you identify potential diseases based on your reported symptoms.</p>
         </div>
       </div>
   );
