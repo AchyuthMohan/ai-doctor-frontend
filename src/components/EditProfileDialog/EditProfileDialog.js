@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import './Edit.css'
 import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
-import Button from "react-bootstrap/Button";
 import { Dialog } from "@mui/material";
 export class EditProfileDialog extends Component {
   state = {
@@ -106,14 +105,14 @@ export class EditProfileDialog extends Component {
             id="dob"
             onChange={this.handleChange}
           />
-          <Button
+          <button
             onClick={this.handleSubmit}
             variant="success"
             type="submit"
             block
           >
             Save Changes
-          </Button>
+          </button>
         </form>
       </Dialog>
     );
