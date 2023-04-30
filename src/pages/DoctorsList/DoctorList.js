@@ -26,32 +26,31 @@ const DoctorList = () => {
     return <Loader />;
   } else {
     return (
-        <div className="docs__list_main_contain">
-          {Object.keys(currentDoc).length !== 0 ? (
-            <DoctorProfile doctor={currentDoc} />
-          ) : null}
-          <h1>Doctors</h1>
-          <div className="doctors__cards_container">
-            {doctors?.map((doctor, index) => {
-              return (
-                <div
-                className="doc__card"
-                  style={{ cursor: "pointer", }}
-                  onClick={() => {
-                    setCurrentDoc(doctor);
-                  }}
-                >
-                  <DoctorCard
-                    key={index}
-                    name={doctor.name}
-                    image={doctor.image}
-                    spec={doctor.special}
-                  />
-                </div>
-              );
-            })}
-          </div>
+      <div className="docs__list_main_contain">
+        {Object.keys(currentDoc).length !== 0 ? (
+          <DoctorProfile doctor={currentDoc} />
+        ) : null}
+        <h1>Doctors</h1>
+        <div className="doctors__cards_container">
+          {doctors &&
+            doctors
+              .sort((a, b) => (a.name < b.name ? -1 : 1))
+              .map((doctor, index) => {
+                return (
+                  <div className="doc__card" onClick={()=>{
+                    setCurrentDoc(doctor)
+                  }}>
+                    <DoctorCard
+                      key={index}
+                      name={doctor.name}
+                      image={doctor.image}
+                      spec={doctor.special}
+                    />
+                  </div>
+                );
+              })}
         </div>
+      </div>
     );
   }
 };

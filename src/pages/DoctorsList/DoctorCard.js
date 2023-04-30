@@ -7,7 +7,7 @@ const DoctorCard = ({ key, name, image, spec }) => {
         src={image}
         alt=" "
       />
-      <p className="doc__name_card">{name}</p>
+      <p className="doc__name_card">Dr. {name}</p>
       <p className="doc__quali_card">{spec}</p>
     </div>
   );
