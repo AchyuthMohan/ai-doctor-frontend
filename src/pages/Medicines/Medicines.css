@@ -1,37 +1,31 @@
-.meds__container {
-  width: 100%;
-  height: auto;
-  z-index: 3;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+.meds__container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap:2rem;
 }
-.medicine_box_det {
-  width: 200px;
-  cursor: pointer;
-  display: flex;
-  transition: all 0.2s ease-in-out;
-  flex-direction: column;
-  gap: 0.5rem;
-  height: 220px;
-  background: rgba( 255, 255, 255, 0.1 );
-  box-shadow: 0 8px 32px 0 #9D3C72;
-  backdrop-filter: blur( 16.5px );
-  -webkit-backdrop-filter: blur( 16.5px );
-  color: white;
-  font-size: 25px;
-  text-align: center;
-  padding: 0.8rem;
-  border: 1px solid #ffff;
-  border-radius: 20px;
+.medicine_box_det{
+    width: 200px;
+    cursor: pointer;
+    display: flex;
+    transition: all .2s ease-in-out;
+    flex-direction: column;
+    gap: 0.5rem;
+    height:220px;
+    background: rgba(157, 60, 114, 0.8);
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
 }
 .med__name {
   font-size: 1rem;
 }
-.medicine_box_det:hover {
-  transition: all 0.2s ease-in-out;
+.medicine_box_det:hover{
+  transition: all .2s ease-in-out;
 }
 .medicine_box_det > img {
   border-radius: 20px;
@@ -39,13 +33,18 @@
   height: 15rem;
 }
 
-.medicines__page_hol {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.medicines__page_hol > h1 {
-  color: #ffff;
-  font-family: "Ubuntu";
-}
+
+
+
+  .medicines__page_hol{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .medicines__page_hol > h1{
+    color: #7B2869;
+    font-family: 'Ubuntu';
+
+  }
+  

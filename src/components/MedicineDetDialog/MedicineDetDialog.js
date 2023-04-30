@@ -40,7 +40,7 @@ const MedicineDetDialog = ({ open, handleClose }) => {
             <div className="count_select_main">
               <p className="increment__operator" onClick={incCount}>
                 +
-              </p>
+              </p> 
               <p>count</p>
               <p className="increment__operator" onClick={decCount}>
                 -
@@ -48,9 +48,9 @@ const MedicineDetDialog = ({ open, handleClose }) => {
             </div>
           </div>
           <div className="dialog__properts"></div>
-          <p>
+          <h3>
             Rs. <span>200.20</span>
-          </p>
+          </h3>
           <button>Purchase</button>
         </div>
       </div>
