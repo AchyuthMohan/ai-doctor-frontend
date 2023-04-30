@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding-top: 2rem;
+    margin-left: -5rem;
     
     
 }
@@ -16,3 +17,119 @@
     flex-direction: column;
 
 }
+.med_dialog_prof p{
+    color: #7B2869;
+    font-family: 'Ubuntu';
+    font-size:1.5rem;
+}
+
+.med_dialog_prof img{
+    filter: drop-shadow(-10px -10px 10px purple);
+    padding-top: 3.5rem;
+    transition: transform .2s;
+}
+.med_dialog_prof img:hover{
+    transform: scale(1.25);
+  }
+.in_stock{
+    color: #7B2869;
+    font-family: 'Ubuntu';
+    transform: translateX(180px);
+    
+}
+h3{
+    color: #7B2869;
+   
+   
+    transform: translateY(90px);
+}
+
+
+.med_dialog__main button {
+    transform: translateX(180px);
+    background-color: #7B2869; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 7rem;
+    border-radius: 10%;
+    transition:  0.2s;
+  }
+
+  .med_dialog__main button:hover{
+   
+  }
+
+  .med_dialog__main button {
+    width: 170px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #e738b5;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.med_dialog__main button:before {
+    content: '';
+    background: linear-gradient(45deg,  #ff00c8, #7B2869);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.med_dialog__main button:active {
+    color: #c6429e
+}
+
+.med_dialog__main button:active:after {
+    background: transparent;
+}
+
+.med_dialog__main button:hover:before {
+    opacity: 1;
+}
+
+.med_dialog__main button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #dd5cb0;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+ .qty__selector{
+    transform: translateY(5rem);
+    
+ }
+
+ .count_select_main p{
+    background-color: #cc5fb47c;
+ }
+
