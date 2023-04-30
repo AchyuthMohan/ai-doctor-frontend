@@ -30,6 +30,7 @@
   font-size: 25px;
   text-align: center;
   border-radius: 20px;
+  cursor: pointer;
   padding: 0.8rem;
   border: 1px solid #ffff;
 }
@@ -105,9 +106,7 @@
   font-size: 1.7rem;
   font-weight: 600;
 }
-.exp__profile_doc{
 
-}
 .book__appt_profile{
   height: 100%;
   display: flex;

@@ -7,7 +7,11 @@ const MedicineDetDialog = ({ open, handleClose }) => {
     setCount(count + 1);
   };
   const decCount = () => {
-    setCount(count - 1);
+    if (count !== 0) {
+      setCount(count - 1);
+    } else {
+      alert("count value cannot be negative");
+    }
   };
   return (
     <Dialog
@@ -15,7 +19,13 @@ const MedicineDetDialog = ({ open, handleClose }) => {
       fullWidth={true}
       maxWidth={"md"}
       PaperProps={{
-        sx: { width: "100%", borderRadius: 5, m: 2, minHeight: "70vh" },
+        sx: {
+          width: "100%",
+          borderRadius: 5,
+          m: 2,
+          minHeight: "70vh",
+          overflow: "hidden",
+        },
       }}
       open={open}
       keepMounted
@@ -40,14 +50,20 @@ const MedicineDetDialog = ({ open, handleClose }) => {
             <div className="count_select_main">
               <p className="increment__operator" onClick={incCount}>
                 +
-              </p> 
-              <p>count</p>
+              </p>
+              <p className="count__value">{count}</p>
               <p className="increment__operator" onClick={decCount}>
                 -
               </p>
             </div>
           </div>
-          <div className="dialog__properts"></div>
+          <div className="dialog__properts">
+            <ul>
+              <li>helo</li>
+              <li>fhufur3nfiuf</li>
+              <li>wjebnfuh3urh3ir</li>
+            </ul>
+          </div>
           <h3>
             Rs. <span>200.20</span>
           </h3>

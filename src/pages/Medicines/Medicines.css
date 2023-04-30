@@ -17,6 +17,7 @@
     height:220px;
     background: rgba(157, 60, 114, 0.8);
     color:white;
+    z-index: 3;
     font-size: 25px;
     text-align: center;
     border-radius: 20px;
@@ -43,7 +44,7 @@
     align-items: center;
   }
   .medicines__page_hol > h1{
-    color: #7B2869;
+    color: #ffff;
     font-family: 'Ubuntu';
 
   }

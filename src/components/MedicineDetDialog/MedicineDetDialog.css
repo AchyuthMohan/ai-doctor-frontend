@@ -5,7 +5,8 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding-top: 2rem;
-    margin-left: -5rem;
+    padding-bottom: 2rem;
+    /* margin-left: -5rem; */
     
     
 }
@@ -29,7 +30,7 @@
     transition: transform .2s;
 }
 .med_dialog_prof img:hover{
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 .in_stock{
     color: #7B2869;
@@ -46,7 +47,7 @@ h3{
 
 
 .med_dialog__main button {
-    transform: translateX(180px);
+    /* transform: translateX(180px); */
     background-color: #7B2869; /* Green */
     border: none;
     color: white;
@@ -61,7 +62,7 @@ h3{
   }
 
   .med_dialog__main button:hover{
-   
+   transform: scale(1.25);
   }
 
   .med_dialog__main button {
@@ -78,7 +79,6 @@ h3{
 }
 
 .med_dialog__main button:before {
-    content: '';
     background: linear-gradient(45deg,  #ff00c8, #7B2869);
     position: absolute;
     top: -2px;
@@ -95,7 +95,7 @@ h3{
 }
 
 .med_dialog__main button:active {
-    color: #c6429e
+    color: #ffff
 }
 
 .med_dialog__main button:active:after {
@@ -107,9 +107,9 @@ h3{
 }
 
 .med_dialog__main button:after {
-    z-index: -1;
-    content: '';
+    /* content: ''; */
     position: absolute;
+    /* z-index: -1; */
     width: 100%;
     height: 100%;
     background: #dd5cb0;
@@ -117,7 +117,13 @@ h3{
     top: 0;
     border-radius: 10px;
 }
-
+.count_select_main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
 @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
@@ -125,11 +131,31 @@ h3{
 }
 
  .qty__selector{
-    transform: translateY(5rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
     
  }
-
- .count_select_main p{
+.count__value{
+    width: 2.5rem;
+    height: 2.5rem;
     background-color: #cc5fb47c;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+ .increment__operator{
+    width: 2.5rem;
+    display: flex;
+    cursor: pointer;
+    height: 2.5rem;
+    background-color: #cc5fb47c;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.5rem;
  }
 
