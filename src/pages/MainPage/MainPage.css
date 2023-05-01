@@ -1,6 +1,7 @@
 .landing__main_container {
   width: 100vw;
   display: flex;
+  z-index: 1;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 1rem;
@@ -13,7 +14,7 @@
   flex-direction: column;
   width: 50%;
   font-family: 'Ubuntu';
-  z-index: 3;
+  z-index: 1;
 
 }
 .landing__desc_part >h1{

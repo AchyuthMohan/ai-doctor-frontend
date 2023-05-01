@@ -11,7 +11,7 @@ const Navbar = () => {
   const { currusername, isAuthenticated } = useContext(UserContext);
   return (
     <div className="nav__holder__out">
-      <div className="nav__main_container">
+      <nav className="nav__main_container">
         <Link to="/">
           <AiOutlineHome size={30} />
           Home
@@ -36,7 +36,7 @@ const Navbar = () => {
             Login
           </Link>
         )}
-      </div>
+      </nav>
     </div>
   );
 };

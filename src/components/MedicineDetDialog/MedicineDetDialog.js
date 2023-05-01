@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import "./MedicineDetDialog.css";
 import { Dialog } from "@mui/material";
-const MedicineDetDialog = ({ open, handleClose }) => {
+import axiosInstance from "../../auth/authHandler";
+import { baseUrl } from "../../utils/urls";
+const MedicineDetDialog = ({ open, handleClose,medicine }) => {
   const [count, setCount] = useState(0);
   const incCount = () => {
     setCount(count + 1);
   };
+  const purchaseMedicine=(e)=>{
+    e.preventDefault();
+    axiosInstance.post(`${baseUrl}/purchase-medicine/`,{
+      "medicine_image": "",
+      "date_of_purchase": null,
+      "medicine_name": "",
+      "medicine_price": null,
+      "medicine_no_of": null,
+      "user_foreign": null
+    })
+  }
   const decCount = () => {
     if (count !== 0) {
       setCount(count - 1);
@@ -35,15 +48,15 @@ const MedicineDetDialog = ({ open, handleClose }) => {
     >
       <div className="med_dialog__main">
         <div className="med_dialog_prof">
-          <p>Name of medicine</p>
+          <p>{medicine.name}</p>
           <img
-            src="https://avatars.githubusercontent.com/u/110590339?s=200&v=4"
+            src={medicine.image}
             alt=" "
           />
         </div>
         <div className="med_dialog__details">
           <p className="in_stock">
-            IN STOCK: <span>200</span>
+            Concentration: <span>{medicine.qty}</span>
           </p>
           <div className="qty__selector">
             <p>Quantity required:</p>
@@ -65,9 +78,9 @@ const MedicineDetDialog = ({ open, handleClose }) => {
             </ul>
           </div>
           <h3>
-            Rs. <span>200.20</span>
+            Rs. <span>{medicine.price}</span>
           </h3>
-          <button>Purchase</button>
+          <button onClick={purchaseMedicine}>Purchase</button>
         </div>
       </div>
     </Dialog>

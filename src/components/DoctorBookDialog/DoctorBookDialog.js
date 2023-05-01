@@ -5,7 +5,7 @@ import { useState } from "react";
 import { baseUrl } from "../../utils/urls";
 import axiosInstance from "../../auth/authHandler";
 const DoctorBookDialog = ({ open, handleClose, doctor }) => {
-  const [date, setDate] = useState();
+  const [date, setDate] = useState();  //setDate("2-3-14")
   const [time, setTime] = useState();
   const [subject, setSubject] = useState("");
   const [userId, setUserId] = useState(0);
@@ -14,6 +14,8 @@ const DoctorBookDialog = ({ open, handleClose, doctor }) => {
       setUserId(res.data.id);
     });
   });
+
+// booking function started
   const bookAppointment = (e) => {
     e.preventDefault();
     axiosInstance
@@ -30,6 +32,9 @@ const DoctorBookDialog = ({ open, handleClose, doctor }) => {
         console.log(response);
       });
   };
+
+// booking function ended
+
   return (
     <Dialog
       fullWidth={true}

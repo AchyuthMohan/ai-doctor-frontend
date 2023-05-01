@@ -8,6 +8,7 @@ const Medicines = () => {
   const [medicines, setMedicines] = useState([]);
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
+  const[currMedicine,setCurrMedicine]=useState({})
   const handleClose = () => {
     setOpen(false);
   };
@@ -27,7 +28,7 @@ const Medicines = () => {
   } else {
     return (
       <div className="medicines__page_hol">
-        <MedicineDetDialog PaperProps={{ style: { overflowY: 'hidden', WebkitOverflowScrolling: 'touch' } }}  open={open} handleClose={handleClose} />
+        <MedicineDetDialog  open={open} handleClose={handleClose} medicine={currMedicine} />
         <h1>Medicines</h1>
         <div class="meds__container">
           {medicines?.map((medicine) => {
@@ -36,6 +37,7 @@ const Medicines = () => {
                 class="medicine_box_det"
                 onClick={() => {
                   setOpen(true);
+                  setCurrMedicine(medicine)
                 }}
               >
                 <img

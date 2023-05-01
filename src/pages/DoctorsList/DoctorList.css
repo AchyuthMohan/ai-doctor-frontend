@@ -14,7 +14,7 @@
 .doctors__cards_container {
   width: 100%;
   display: flex;
-  z-index: 2;
+  z-index: 1;
   align-items: center;
   justify-content: center;
   flex-direction: row;
@@ -61,15 +61,19 @@
 
 .doctor_card > img {
   width: 100%;
-  height: 10rem;
+  height: 12rem;
   border-radius: 20px;
   top: 0;
+}
+.doctor_card > img:hover{
+  transform: translateY(-10%);
+  transition: opacity 0.5s ease-in,transform 0.5s ease-out;
 }
 .doc__profile__main {
   display: flex;
   border-radius: 20px;
   width: 80%;
-  z-index: 3;
+  z-index: 1;
   border: 2px solid #ffff;
   backdrop-filter: blur(25px);
   flex-direction: row;

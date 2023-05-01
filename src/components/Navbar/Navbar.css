@@ -5,7 +5,7 @@
   align-items: center;
   padding-top: 2rem;
   flex-direction: row;
-  z-index:1;
+  z-index:2;
   justify-content: center;
 }
 .nav__main_container {
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  z-index: 1000000000;
+  z-index: 2;
   background: rgb(123, 40, 105);
   background: linear-gradient(180deg, rgba(123, 40, 105, 1) 81%);
   border-radius: 50px;
