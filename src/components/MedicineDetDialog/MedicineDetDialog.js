@@ -5,6 +5,8 @@ import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
 const MedicineDetDialog = ({ open, handleClose,medicine }) => {
   const [count, setCount] = useState(0);
+  let date=new Date()
+  console.log(date.now)
   const incCount = () => {
     setCount(count + 1);
   };
@@ -16,7 +18,8 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
       "medicine_name": "",
       "medicine_price": null,
       "medicine_no_of": null,
-      "user_foreign": null
+      "user_foreign": null,
+      "medicine_Foreign": null
     })
   }
   const decCount = () => {
