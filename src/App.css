@@ -1,8 +1,8 @@
 .App {
   overflow: hidden;
   min-height: 100vh;
-  background:#983A71;
-  background: -webkit-linear-gradient(to left, #8f94fb, #983A71);
+  /* background:#983A71;
+  background: -webkit-linear-gradient(to left, #8f94fb, #983A71); */
 }
 .btm__vector_c {
   width: 100%;

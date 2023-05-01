@@ -14,8 +14,8 @@
   justify-content: space-between;
   padding: 1rem;
   z-index: 2;
-  background: rgb(123, 40, 105);
-  background: linear-gradient(180deg, rgba(123, 40, 105, 1) 81%);
+  background: #C85C8E;
+  background: linear-gradient(180deg, #C85C8E 81%);
   border-radius: 50px;
 }
 .nav__main_container > img {
