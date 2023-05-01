@@ -19,9 +19,9 @@ const DoctorProfile = ({ doctor }) => {
         <p>{doctor.special}</p>
         <div className="exp__profile_doc">
           <p>years of experience: {doctor.experience}</p>
-          <p>Education: MBBS,MBA,BTECH</p>
-          <p>consulation days: mon-thu</p>
-          <p>consulation time: 9:30am - 9:30pm</p>
+          <p>Education: {doctor.education}</p>
+          <p>consulation days: {doctor.consultation_days}</p>
+          <p>consulation time: {doctor.consultation_time}</p>
         </div>
       </div>
       <div className="book__appt_profile">

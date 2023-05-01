@@ -33,11 +33,19 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
       maxWidth={"md"}
       PaperProps={{
         sx: {
+          '&::-webkit-scrollbar': {
+            width: '6px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#7B2869',
+          },
           width: "100%",
           borderRadius: 5,
           m: 2,
-          minHeight: "70vh",
+          padding:'2rem',
+          height: "70vh",
           overflow: "hidden",
+          overflowY:"scroll",
         },
       }}
       open={open}
@@ -56,7 +64,7 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
         </div>
         <div className="med_dialog__details">
           <p className="in_stock">
-            Concentration: <span>{medicine.qty}</span>
+            IN STOCK: <span>{medicine.in_stock}</span>
           </p>
           <div className="qty__selector">
             <p>Quantity required:</p>
@@ -72,15 +80,22 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
           </div>
           <div className="dialog__properts">
             <ul>
-              <li>helo</li>
-              <li>fhufur3nfiuf</li>
-              <li>wjebnfuh3urh3ir</li>
+              <li>Type: <span>{medicine.type}</span></li>
+              <li>Weight: <span>{medicine.weight}</span></li>
+              <li>Manufacturer: <span>{medicine.manufacturer}</span></li>
+              <li>Contains: <span>{medicine.contains}</span></li>
+              <li>Colour: <span>{medicine.color}</span></li>
+              <li>Storage: <span>{medicine.storage}</span></li>
+              <li>Dosage: <span>{medicine.dosage}</span></li>
             </ul>
           </div>
+          <div className="purchase__med_section">
           <h3>
             Rs. <span>{medicine.price}</span>
           </h3>
           <button onClick={purchaseMedicine}>Purchase</button>
+          </div>
+          
         </div>
       </div>
     </Dialog>
