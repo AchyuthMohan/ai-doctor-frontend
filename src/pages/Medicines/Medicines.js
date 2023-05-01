@@ -41,7 +41,7 @@ const Medicines = () => {
                 }}
               >
                 <img
-                  src="https://imgs.search.brave.com/MoP_HouzU278dGNqaOkhb4DuHlXG5WA3XeZ8Luu-3EA/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/b2htYW4uaW4vd3At/Y29udGVudC91cGxv/YWRzLzIwMjEvMDIv/T0hNQU4tRGVsYXkt/Q2Fwc3VsZXMtaW1n/LmpwZw"
+                  src={medicine.image}
                   alt=""
                 />
                 <p class="med__name">

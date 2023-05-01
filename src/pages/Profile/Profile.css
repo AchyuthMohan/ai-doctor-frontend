@@ -1,6 +1,6 @@
 .profile__main_pg {
   width: 100vw;
-  z-index: 3;
+  z-index: 1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 .profile__card {
-  z-index: 3;
+  z-index: 1;
   /* gap: 2rem; */
   justify-content: space-evenly;
   padding: 1.5rem;
@@ -27,7 +27,7 @@
 }
 .apt__booked_data {
   display: flex;
-  z-index: 3;
+  z-index: 1;
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
