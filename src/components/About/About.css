@@ -1,0 +1,5 @@
+.about__main_container{
+    width: 100vw;
+    min-height: 90vh;
+    z-index: 1;
+}
