@@ -3,13 +3,14 @@
   width: 100vw;
   /* background-image: url("../../assets/svg/istockphoto-1197585271-612x612\ 1.svg"); */
   display: flex;
-  z-index: 3;
+  z-index: 1;
   flex-direction: column;
   align-items: center;
   padding-left: 2rem;
 }
 .sign__up_red {
   color: #7b2869;
+  z-index: 1;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -25,7 +26,7 @@
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
-  z-index: 3;
+  z-index: 1;
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
