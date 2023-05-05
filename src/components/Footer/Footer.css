@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer {
+    padding-bottom: 500px;
+    background: #C85C8E;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+.footer .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    color: #fff;
+}
+.fa-heart:before {
+    content: "\f004";
+}
+.footer .content .text i{
+    width: 2rem;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #26B6CA;
+    align-items: center;
+}
+.foot{
+    padding: 3rem 3rem;
+    background-color: #C85C8E;
+  }
