@@ -42,7 +42,7 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
     })
   }
   const decCount = () => {
-    if (count >0) {
+    if (count >1) {
       setCount(count - 1);
     } else {
       alert("count value cannot be zero");

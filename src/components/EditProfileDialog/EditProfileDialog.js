@@ -10,7 +10,7 @@ export class EditProfileDialog extends Component {
     gender: "",
     dob: "",
     user_image: null,
-    user_foreign: localStorage.getItem("userid"),
+    user_foreign: this.props.userid,
   };
   handleChange = (e) => {
     this.setState({
