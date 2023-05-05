@@ -4,7 +4,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 import btmMascotVector from "./assets/svg/btmMascotVector.svg";
 import Bubbles from "./components/Bubbles/Bubbles";
 import UserDetails from "./contexts/UserContext";
-import './commonStyles.css'
+import "./commonStyles.css";
 import {
   MainPage,
   DoctorsList,
@@ -12,6 +12,7 @@ import {
   Profile,
   Login,
   Signup,
+  Predictor,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
@@ -48,12 +49,13 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign-up" element={<Signup />} />
+                <Route path="/predict" element={<Predictor />} />
               </Routes>
             </MainLayout>
             <div className="btm__vector_c">
               <img src={btmMascotVector} alt="" />
             </div>
-           
+
             <Bubbles />
           </Suspense>
         </BrowserRouter>
