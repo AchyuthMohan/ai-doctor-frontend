@@ -4,8 +4,9 @@ import { Dialog } from "@mui/material";
 import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
 import { UserContext } from "../../contexts/UserContext";
+import { toast } from "react-hot-toast";
 const MedicineDetDialog = ({ open, handleClose,medicine }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const date =new Date();
   const today=new Date();
   const year = today.getFullYear();
@@ -25,17 +26,27 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
       medicine_name: medicine.name,
       medicine_price: medicine.price,
       medicine_no_of: count,
-      user_foreign: curruserid
+      user_foreign: curruserid,
+      medicine_Foreign:medicine.id
       
     }).then((response)=>{
-      console.log(response);
+      if(response.status===201){
+        alert('Medincine purchased successfully')
+        handleClose();
+      }else{
+        alert("Sorry something went wrong please check the inputs..")
+        handleClose();
+      }
+    },(error)=>{
+      alert("Sorry something went wrong please check the inputs..");
+      handleClose();
     })
   }
   const decCount = () => {
-    if (count !== 0) {
+    if (count >0) {
       setCount(count - 1);
     } else {
-      alert("count value cannot be negative");
+      alert("count value cannot be zero");
     }
   };
   return (
