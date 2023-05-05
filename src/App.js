@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";
 import btmMascotVector from "./assets/svg/btmMascotVector.svg";
-import Bubbles from "./components/Bubbles/Bubbles";
 import UserDetails from "./contexts/UserContext";
 import "./commonStyles.css";
 import {
@@ -55,8 +54,6 @@ function App() {
             <div className="btm__vector_c">
               <img src={btmMascotVector} alt="" />
             </div>
-
-            <Bubbles />
           </Suspense>
         </BrowserRouter>
       </div>

@@ -1,8 +1,17 @@
 .App {
   overflow: hidden;
-  min-height: 100vh;
-  /* background:#983A71;
-  background: -webkit-linear-gradient(to left, #8f94fb, #983A71); */
+  background-image: url('./assets/png/Burning.png'),url('./assets/png/Burningmirror.png');
+  background-color: #02121C; 
+    /* background-position: center;  */
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    -webkit-animation: backgroundScroll 15s linear infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation: backgroundScroll 15s linear infinite;
+    animation-fill-mode: forwards;  
+    min-height: 100vh;
 }
 .btm__vector_c {
   width: 100%;
@@ -11,3 +20,14 @@
   justify-content: flex-end;
   flex-direction: row;
 }
+@-webkit-keyframes backgroundScroll {
+  from {background-position: 0 0;}
+  to {background-position: -180px 0px;}
+  }
+  
+  @keyframes backgroundScroll {
+  from {background-position: 0 0;}
+  to {background-position: -180px 0px;}
+  
+}
+
