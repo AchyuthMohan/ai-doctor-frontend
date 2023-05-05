@@ -5,7 +5,7 @@ import { useState } from "react";
 import { baseUrl } from "../../utils/urls";
 import axiosInstance from "../../auth/authHandler";
 const DoctorBookDialog = ({ open, handleClose, doctor }) => {
-  const [date, setDate] = useState();  //setDate("2-3-14")
+  const [date, setDate] = useState(); //setDate("2-3-14")
   const [time, setTime] = useState();
   const [subject, setSubject] = useState("");
   const [userId, setUserId] = useState(0);
@@ -15,7 +15,7 @@ const DoctorBookDialog = ({ open, handleClose, doctor }) => {
     });
   });
 
-// booking function started
+  // booking function started
   const bookAppointment = (e) => {
     e.preventDefault();
     axiosInstance
@@ -28,12 +28,26 @@ const DoctorBookDialog = ({ open, handleClose, doctor }) => {
         special: doctor.special,
         user_foreign: userId,
       })
-      .then((response) => {
-        console.log(response);
-      });
+      .then(
+        (response) => {
+          if (response.status === 201) {
+            alert(
+              `Successfully booked the appointment for Dr. ${doctor.name} for more info visit dashboard !!`
+            );
+            handleClose();
+          } else {
+            alert("Oops something went wrong ...");
+            handleClose();
+          }
+        },
+        (error) => {
+          alert("Oops something went wrong ...");
+          handleClose();
+        }
+      );
   };
 
-// booking function ended
+  // booking function ended
 
   return (
     <Dialog
@@ -47,32 +61,31 @@ const DoctorBookDialog = ({ open, handleClose, doctor }) => {
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-        <form onSubmit={bookAppointment} className="appt__book_dialog_main">
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => {
-              setDate(e.target.value);
-            }}
-          />
-          <input
-            type="time"
-            value={time}
-            onChange={(e) => {
-              setTime(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="Enter the reason"
-            value={subject}
-            onChange={(e) => {
-              setSubject(e.target.value);
-            }}
-          />
-          <button type="submi">book appointment</button>
-        </form>
-      
+      <form onSubmit={bookAppointment} className="appt__book_dialog_main">
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => {
+            setDate(e.target.value);
+          }}
+        />
+        <input
+          type="time"
+          value={time}
+          onChange={(e) => {
+            setTime(e.target.value);
+          }}
+        />
+        <input
+          type="text"
+          placeholder="Enter the reason"
+          value={subject}
+          onChange={(e) => {
+            setSubject(e.target.value);
+          }}
+        />
+        <button type="submi">book appointment</button>
+      </form>
     </Dialog>
   );
 };

@@ -39,6 +39,7 @@ const DoctorList = () => {
                 return (
                   <div className="doc__card" onClick={()=>{
                     setCurrentDoc(doctor)
+                    window.scrollTo(0,0)
                   }}>
                     <DoctorCard
                       key={index}
