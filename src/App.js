@@ -37,6 +37,7 @@ function App() {
             <div className="btm__vector_c">
               <img src={btmMascotVector} alt="" />
             </div>
+           
             <Bubbles />
           </Suspense>
         </BrowserRouter>
