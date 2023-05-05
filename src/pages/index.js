@@ -6,4 +6,3 @@ export const DoctorsList = lazy(() => import("./DoctorsList/DoctorList"));
 export const Login = lazy(() => import("./Login/Login"));
 export const Signup = lazy(() => import("./Signup/Signup"));
 
-

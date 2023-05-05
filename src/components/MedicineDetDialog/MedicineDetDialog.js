@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "./MedicineDetDialog.css";
 import { Dialog } from "@mui/material";
 import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
+import { UserContext } from "../../contexts/UserContext";
 const MedicineDetDialog = ({ open, handleClose,medicine }) => {
   const [count, setCount] = useState(0);
-  let date=new Date()
+  const date =new Date();
+  const today=new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth()+1).padStart(2,'0');
+  const day =String(today.getDate()).padStart(2,'0');
+  const currentDate = year +'-'+month+'-'+day;
+  const { curruserid }=useContext(UserContext);
   console.log(date.now)
   const incCount = () => {
     setCount(count + 1);
@@ -13,13 +20,15 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
   const purchaseMedicine=(e)=>{
     e.preventDefault();
     axiosInstance.post(`${baseUrl}/purchase-medicine/`,{
-      "medicine_image": "",
-      "date_of_purchase": null,
-      "medicine_name": "",
-      "medicine_price": null,
-      "medicine_no_of": null,
-      "user_foreign": null,
-      "medicine_Foreign": null
+      medicine_image: medicine.image,
+      date_of_purchase: currentDate,
+      medicine_name: medicine.name,
+      medicine_price: medicine.price,
+      medicine_no_of: count,
+      user_foreign: curruserid
+      
+    }).then((response)=>{
+      console.log(response);
     })
   }
   const decCount = () => {
