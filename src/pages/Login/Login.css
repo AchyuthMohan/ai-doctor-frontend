@@ -40,11 +40,12 @@
   border-radius: 20px;
 }
 .login__form > input {
-  width: 16rem;
+  width: 25rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #7b2869;
-  height: 3rem;
-  color: #ffff;
+  height: 4rem;
+  /* color: #ffff; */
+  font-size: 1rem;
   display: flex;
   align-items: center;
   border-radius: 20px;

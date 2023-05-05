@@ -4,6 +4,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 import btmMascotVector from "./assets/svg/btmMascotVector.svg";
 import Bubbles from "./components/Bubbles/Bubbles";
 import UserDetails from "./contexts/UserContext";
+import './commonStyles.css'
 import {
   MainPage,
   DoctorsList,
@@ -15,12 +16,27 @@ import {
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
+import Toaster from "react-hot-toast";
 import MainLayout from "./components/MainLayout/MainLayout";
 function App() {
   return (
     <UserDetails>
       <div className="App">
         <BrowserRouter>
+          <Toaster
+            toastOptions={{
+              className: "",
+              style: {
+                background: "#263743",
+                color: "#ffff",
+                padding: "10px",
+                borderRadius: "8px",
+                fontFamily: "Rhizome",
+                fontSize: "1rem",
+              },
+            }}
+            position="top-right"
+          />
           <Suspense fallback={<Loader />}>
             <ScrollToTop />
             <Navbar />

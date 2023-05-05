@@ -28,6 +28,7 @@
   -webkit-backdrop-filter: blur( 16.5px );
   color: white;
   font-size: 25px;
+
   text-align: center;
   border-radius: 20px;
   cursor: pointer;
@@ -41,7 +42,7 @@
   font-weight: 500;
 }
 .doc__quali_card {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #ffff;
   font-family: "Ubuntu";
   font-weight: 400;
@@ -55,6 +56,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  padding: 1rem;
   background: rgba(157, 60, 114, 0.8);
   backdrop-filter: blur(25px);
 }

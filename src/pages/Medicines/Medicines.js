@@ -29,7 +29,7 @@ const Medicines = () => {
     return (
       <div className="medicines__page_hol">
         <MedicineDetDialog  open={open} handleClose={handleClose} medicine={currMedicine} />
-        <h1>Medicines</h1>
+        <h1 className="heading__text">Medicines</h1>
         <div class="meds__container">
           {medicines?.map((medicine) => {
             return (

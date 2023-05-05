@@ -30,7 +30,7 @@ const DoctorList = () => {
         {Object.keys(currentDoc).length !== 0 ? (
           <DoctorProfile doctor={currentDoc} />
         ) : null}
-        <h1>Doctors</h1>
+        <h1 className="heading__text">Doctors</h1>
         <div className="doctors__cards_container">
           {doctors &&
             doctors

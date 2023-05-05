@@ -38,7 +38,7 @@ const MainPage = () => {
           style={{ margin: 0,zIndex:1 }}
         />
         <div className="landing__desc_part">
-          <h1>AI Doctor</h1>
+          <h1 className="heading__text">AI Doctor</h1>
           <p>Welcome to our AI-powered symptom identification website! Our cutting-edge technology uses the latest advancements in artificial intelligence to help you identify potential diseases based on your reported symptoms.</p>
         </div>
       </div>
