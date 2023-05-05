@@ -4,7 +4,6 @@ import { Dialog } from "@mui/material";
 import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
 import { UserContext } from "../../contexts/UserContext";
-import { toast } from "react-hot-toast";
 const MedicineDetDialog = ({ open, handleClose,medicine }) => {
   const [count, setCount] = useState(1);
   const date =new Date();

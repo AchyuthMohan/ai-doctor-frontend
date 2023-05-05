@@ -1,100 +1,82 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import "./Profile.css";
 import axiosInstance from "../../auth/authHandler";
 import { baseUrl } from "../../utils/urls";
+import Loader from "../../components/Loader/Loader";
 import EditProfileDialog from "../../components/EditProfileDialog/EditProfileDialog";
+import { useNavigate } from "react-router";
 const Profile = () => {
-  const [curr_username, setCurr_username] = useState("");
-  const [currEmail, setCurrEmail] = useState("");
-  const [age, setAge] = useState();
-  const [gender, setGender] = useState("");
-  const [currUserid, setcurrUserid] = useState();
-  const [actualname, setActualname] = useState("");
-  const [userimg, setUserimg] = useState();
+  const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
-  const [dob, setDob] = useState("");
-  const [userImage, setUserImage] = useState();
+  const [user, setUser] = useState({});
+  const { isAuthenticated, appoints, curruseremail, curruserid, currusername } =
+    useContext(UserContext);
   const handleClose = () => setOpen(false);
-  const [userDetailId, setUserDetailId] = useState(0);
+  const navigate = useNavigate();
   useEffect(() => {
-    axiosInstance.get(`${baseUrl}/current-user/`).then(
-      (response) => {
-        console.log(response);
-        setCurr_username(response.data.username);
-        setCurrEmail(response.data.email);
-        setcurrUserid(response.data.id);
-
-        localStorage.setItem("userid", response.data.id);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }, []);
-  useEffect(() => {
-    axiosInstance.get(`${baseUrl}/user-detail/`).then((response) => {
-      console.log(response);
-      response.data.forEach((item) => {
-        if (item.user_foreign === currUserid) {
-          setUserImage(item.user_image);
-          setUserDetailId(item.id);
-          setActualname(item.actual_name);
-          setAge(response.data.age);
-          setGender(response.data.gender);
-          setDob(response.data.dob);
+    if (isAuthenticated) {
+      axiosInstance.get(`${baseUrl}/user-detail/${curruserid}/`).then(
+        (response) => {
+          setUser(response.data);
+          setLoading(false);
+        },
+        (error) => {
+          console.log(error);
         }
-      });
-    });
-  });
-  return (
-    <div className="profile__main_pg">
-      <div className="profile__card">
-        <img src={userImage} alt="" />
-        <div className="profile__card_details_sect">
-          <p>{actualname}</p>
-          <p>AD{currUserid}</p>
-          <p>Age:{age}</p>
-          <p>Gender: {gender}</p>
-          <p>username:{curr_username}</p>
-          <p>DOB:{dob}</p>
-          <p>Email:{currEmail}</p>
+      );
+    } else {
+      navigate("/login");
+    }
+  }, [isAuthenticated, curruserid, navigate]);
+  if (loading) {
+    <Loader />;
+  } else {
+    return (
+      <div className="profile__main_pg">
+        <div className="profile__card">
+          <img src={user.user_image} alt="" />
+          <div className="profile__card_details_sect">
+            <p>{user.actual_name}</p>
+            <p>AD{curruserid}</p>
+            <p>Age:{user.age}</p>
+            <p>Gender: {user.gender}</p>
+            <p>username:{currusername}</p>
+            <p>DOB:{user.dob}</p>
+            <p>Email:{curruseremail}</p>
 
-          <button
-            onClick={() => {
-              setOpen(true);
-            }}
-            
-          >
-            Edit profile
-          </button>
-          <EditProfileDialog
-            open={open}
-            handleClose={handleClose}
-            userDetailId={userDetailId}
-            actualname={actualname}
-            userimg={userimg}
-            setActualname={setActualname}
-            setUserimg={setUserimg}
-          />
-        </div>
-      </div>
-      <div className="booking__section">
-        <div className="profile__activ_box">
-          <div className="profile__head">APPOINTMENTS</div>
-
-          <div className="apt__booked_data">
-            <span>1.</span>
-            <span>Dr. Robin</span>
-            <span>10:00am</span>
-            <span>12-04-2023</span>
-            <span>https://meet.google.com/wer-kju-kdj</span>
+            <button
+              onClick={() => {
+                setOpen(true);
+              }}
+            >
+              Edit profile
+            </button>
+            <EditProfileDialog open={open} handleClose={handleClose} />
           </div>
         </div>
-        <div className="profile__activ_box">
-          <div className="profile__head">PURCHASE HISTORY</div>
+        <div className="booking__section">
+          <div className="profile__activ_box">
+            <div className="profile__head">APPOINTMENTS</div>
+
+            {appoints.map((appoint) =>
+              appoint.user_foreign === parseInt(curruserid) ? (
+                <div className="apt__booked_data" key={appoint.id}>
+                  <span>{appoint.id}</span>
+                  <span>Dr. {appoint.name_of_doctor}</span>
+                  <span>{appoint.time}</span>
+                  <span>{appoint.date}</span>
+                  <span>{appoint.meet_link}</span>
+                </div>
+              ) : null
+            )}
+          </div>
+          <div className="profile__activ_box">
+            <div className="profile__head">PURCHASE HISTORY</div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 export default Profile;
