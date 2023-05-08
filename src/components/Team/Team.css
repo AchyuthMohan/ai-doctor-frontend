@@ -10,6 +10,7 @@
 .teams__container > h1{
   font-size: 1.5rem;
   font-family: 'Ubuntu';
+  color: #C85C8E;
 }
 .teams__cards_container{
   width: 100%;

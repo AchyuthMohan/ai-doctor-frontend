@@ -1,5 +1,30 @@
 .about__main_container{
     width: 100vw;
-    min-height: 90vh;
+    padding: 3rem;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+}
+.about__main_container >img{
+    width: 15rem;
+    height: 13rem;
+}
+.abt_desc{
+    display: flex;
+    flex-direction: column;
+    color: #ffff;
+}
+.abt_desc >h1{
+    color: #C85C8E;
+    font-size: 2rem;
+    font-family: 'Ubuntu';
+    font-weight: 600;
+}
+.abt_desc >p{
+    width:65%;
 }

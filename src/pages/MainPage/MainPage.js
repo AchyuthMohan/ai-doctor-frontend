@@ -5,7 +5,6 @@ import Lottie from "react-lottie";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 import About from "../../components/About/About";
 import Team from "../../components/Team/Team";
-import Footer from "../../components/Footer/Footer";
 const MainPage = () => {
   const [mascotSize, setMascotSize] = useState();
   const size = useScreenWidth();
@@ -49,7 +48,6 @@ const MainPage = () => {
       </div>
       <About />
       <Team />
-      <Footer />
     </div>
   );
 };

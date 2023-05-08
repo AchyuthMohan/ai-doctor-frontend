@@ -6,7 +6,6 @@ import { baseUrl } from "../../utils/urls";
 
 export default function Home() {
   const [userInput, setUserInput] = useState("");
-  const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -26,6 +25,7 @@ export default function Home() {
   // Focus on text field on load
   useEffect(() => {
     textAreaRef.current.focus();
+    window.scrollTo(0,0)
   }, []);
 
   const handleError = () => {
@@ -109,17 +109,7 @@ export default function Home() {
     }
   };
 
-  // Keep history in sync with messages
-  useEffect(() => {
-    if (messages.length >= 3) {
-      setHistory([
-        [
-          messages[messages.length - 2].message,
-          messages[messages.length - 1].message,
-        ],
-      ]);
-    }
-  }, [messages]);
+  
 
   return (
     <>

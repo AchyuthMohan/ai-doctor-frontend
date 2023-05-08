@@ -34,9 +34,16 @@
   padding: 1rem;
   font-size: 1rem;
 }
+.apt__booked_data >span{
+  z-index: 1;
+}
 .profile__card_details_sect {
   display: flex;
   flex-direction: column;
+}
+.meet_link{
+  cursor: pointer;
+  z-index: 1;
 }
 
 .profile__card > img {
@@ -93,8 +100,19 @@
   font-family: "Ubuntu";
   font-size: 1.5rem;
 }
+.prchs__history_heading{
+  color: #FFBABA;;
+  font-size: 1.5rem;
+  font-family: 'Ubuntu';
 
-.content {
-  padding-left: 20px;
-  padding-top: 30px;
+}
+
+.prchs__history_container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }

@@ -9,6 +9,11 @@ const DoctorBookDialog = ({ open, handleClose, doctor }) => {
   const [time, setTime] = useState();
   const [subject, setSubject] = useState("");
   const [userId, setUserId] = useState(0);
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  const currentDate = year + "-" + month + "-" + day;
   useEffect(() => {
     axiosInstance.get(`${baseUrl}/current-user/`).then((res) => {
       setUserId(res.data.id);
@@ -18,33 +23,37 @@ const DoctorBookDialog = ({ open, handleClose, doctor }) => {
   // booking function started
   const bookAppointment = (e) => {
     e.preventDefault();
-    axiosInstance
-      .post(`${baseUrl}/book-appointment/`, {
-        date: date,
-        time: time,
-        subject: subject,
-        name_of_doctor: doctor.name,
-        meet_link: doctor.meet_link,
-        special: doctor.special,
-        user_foreign: userId,
-      })
-      .then(
-        (response) => {
-          if (response.status === 201) {
-            alert(
-              `Successfully booked the appointment for Dr. ${doctor.name} for more info visit dashboard !!`
-            );
-            handleClose();
-          } else {
+    if (currentDate > date) {
+      alert("Please select a valid date");
+    } else {
+      axiosInstance
+        .post(`${baseUrl}/book-appointment/`, {
+          date: date,
+          time: time,
+          subject: subject,
+          name_of_doctor: doctor.name,
+          meet_link: doctor.meet_link,
+          special: doctor.special,
+          user_foreign: userId,
+        })
+        .then(
+          (response) => {
+            if (response.status === 201) {
+              alert(
+                `Successfully booked the appointment for Dr. ${doctor.name} for more info visit dashboard !!`
+              );
+              handleClose();
+            } else {
+              alert("Oops something went wrong ...");
+              handleClose();
+            }
+          },
+          (error) => {
             alert("Oops something went wrong ...");
             handleClose();
           }
-        },
-        (error) => {
-          alert("Oops something went wrong ...");
-          handleClose();
-        }
-      );
+        );
+    }
   };
 
   // booking function ended
