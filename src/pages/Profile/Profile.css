@@ -43,6 +43,8 @@
 }
 .meet_link{
   cursor: pointer;
+  color: blue;
+  text-decoration: underline;
   z-index: 1;
 }
 

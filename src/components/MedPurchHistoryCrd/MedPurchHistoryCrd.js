@@ -1,40 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./MedPurchHistoryCrd.css";
-const MedPurchHistoryCrd = ({medicine}) => {
-  return (
-    <div className="med_pur__card_main">
-      <div className="prchs_name_img_container">
-        <img
-          src={medicine.medicine_image}
-          alt=" "
-        />
-        <p>Medicine Name</p>
-      </div>
+import { UserContext } from "../../contexts/UserContext";
 
-      <div className="med_history__desc">
-        <p>
-          <span>Material</span>
-          <span>Leather</span>
-        </p>
-        <p>
-          <span>Material</span>
-          <span>Leather</span>
-        </p>
-        <p>
-          <span>Material</span>
-          <span>Leather</span>
-        </p>
-        <p>
-          <span>Material</span>
-          <span>Leather</span>
+const MedPurchHistoryCrd = ({ medicine }) => {
+  const { curruserid } = useContext(UserContext);
+  if (medicine.user_foreign === curruserid) {
+    return (
+      <div className="med_pur__card_main">
+        <div className="prchs_name_img_container">
+          <img src={medicine.medicine_image} alt=" " />
+          <p>{medicine.medicine_name}</p>
+        </div>
+
+        <div className="med_history__desc">
+          <p>
+            <span>Date</span>
+            <span>{medicine.date_of_purchase}</span>
+          </p>
+        </div>
+        <p className="med_hist_price">
+          <span>$ {medicine.medicine_price}</span>
+          <span>{medicine.medicine_no_of}</span>
+          <span>
+            Total: $ {medicine.medicine_price * medicine.medicine_no_of}
+          </span>
         </p>
       </div>
-      <p className="med_hist_price">
-        <span>$400</span>
-        <span>2</span>
-      </p>
-    </div>
-  );
+    );
+  }
 };
 
 export default MedPurchHistoryCrd;

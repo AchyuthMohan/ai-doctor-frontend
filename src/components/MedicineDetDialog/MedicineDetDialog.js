@@ -12,6 +12,7 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
   const month = String(today.getMonth()+1).padStart(2,'0');
   const day =String(today.getDate()).padStart(2,'0');
   const currentDate = year +'-'+month+'-'+day;
+  const[address,setAddress]=useState('')
   const { curruserid }=useContext(UserContext);
   console.log(date.now)
   const incCount = () => {
@@ -26,7 +27,8 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
       medicine_price: medicine.price,
       medicine_no_of: count,
       user_foreign: curruserid,
-      medicine_Foreign:medicine.id
+      medicine_Foreign:medicine.id,
+      del_address:address
       
     }).then((response)=>{
       if(response.status===201){
@@ -115,7 +117,13 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
           <h3>
             Rs. <span>{medicine.price}</span>
           </h3>
-          <button onClick={purchaseMedicine}>Purchase</button>
+          <form onSubmit={purchaseMedicine}>
+            <input type="text"placeholder="Enter the delivery address" value={address} onChange={(e)=>{
+              setAddress(e.target.value);
+            }}/>
+             <button type="submit">Purchase</button>
+          </form>
+         
           </div>
           
         </div>
