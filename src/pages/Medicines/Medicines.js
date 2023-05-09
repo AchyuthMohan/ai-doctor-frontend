@@ -45,7 +45,7 @@ const Medicines = () => {
                   alt=""
                 />
                 <p class="med__name">
-                  {medicine.name}: {medicine.qty} Mg
+                  {medicine.name}
                 </p>
               </div>
             );

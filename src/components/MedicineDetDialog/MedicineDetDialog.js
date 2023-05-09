@@ -87,9 +87,9 @@ const MedicineDetDialog = ({ open, handleClose,medicine }) => {
           />
         </div>
         <div className="med_dialog__details">
-          <p className="in_stock">
+          {/* <p className="in_stock">
             IN STOCK: <span>{medicine.in_stock}</span>
-          </p>
+          </p> */}
           <div className="qty__selector">
             <p>Quantity required:</p>
             <div className="count_select_main">
