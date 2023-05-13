@@ -22,10 +22,9 @@ export default function Home() {
     messageList.scrollTop = messageList.scrollHeight;
   }, [messages]);
 
-  // Focus on text field on load
   useEffect(() => {
     textAreaRef.current.focus();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }, []);
 
   const handleError = () => {
@@ -40,7 +39,6 @@ export default function Home() {
     setUserInput("");
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,37 +52,22 @@ export default function Home() {
       { message: userInput, type: "userMessage" },
     ]);
 
-    // Send user question and history to API
-    // const response = await fetch('/api/chat', {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ message: userInput }), //, history: history
-    // });
-
-    // console.log(await response.json())
-
     const response = await fetch(`${baseUrl}/chatbot/predict/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        
       },
-      body: JSON.stringify({ message: userInput }),//history: req.body.history
+      body: JSON.stringify({ message: userInput }),
     });
-  
-      const data = await response.json();
-      console.log("resData: ",data)
+
+    const data = await response.json();
+    console.log("resData: ", data);
     if (!response.ok) {
       handleError();
       return;
     }
 
-    // Reset user input
     setUserInput("");
-    // const data = await response.json();
-    // const data=resData
     console.log(data.answer);
     if (data.error === "Unauthorized") {
       handleError();
@@ -98,7 +81,6 @@ export default function Home() {
     setLoading(false);
   };
 
-  // Prevent blank submissions and allow for multiline input
   const handleEnter = (e) => {
     if (e.key === "Enter" && userInput) {
       if (!e.shiftKey && userInput) {
@@ -109,17 +91,13 @@ export default function Home() {
     }
   };
 
-  
-
   return (
     <>
-      
       <main className={styles.main}>
         <div className={styles.cloud}>
           <div ref={messageListRef} className={styles.messagelist}>
             {messages.map((message, index) => {
               return (
-                // The latest message sent by the user will be animated while waiting for a response
                 <div
                   key={index}
                   className={
@@ -132,7 +110,6 @@ export default function Home() {
                       : styles.usermessage
                   }
                 >
-                  {/* Display the correct icon depending on the message type */}
                   {message.type === "apiMessage" ? (
                     <img
                       src="https://avatars.githubusercontent.com/u/110590339?s=200&v=4"
@@ -154,7 +131,6 @@ export default function Home() {
                     />
                   )}
                   <div className={styles.markdownanswer}>
-                    {/* Messages are being rendered in Markdown format */}
                     <ReactMarkdown linkTarget={"_blank"}>
                       {message.message}
                     </ReactMarkdown>

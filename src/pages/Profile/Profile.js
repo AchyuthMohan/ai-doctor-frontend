@@ -93,7 +93,6 @@ const Profile = () => {
           
            ( appoint.user_foreign === parseInt(curruserid) && currentDate<=appoint.date)? (
               <div className="apt__booked_data" key={appoint.id}>
-                <span>{index+1}</span>
                 <span>Dr. {appoint.name_of_doctor}</span>
                 <span>{appoint.time}</span>
                 <span>{appoint.date}</span>
